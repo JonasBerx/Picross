@@ -4,42 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
-        xmlns:controls="clr-namespace:View.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     
     <Grid>
-        <controls:PiCrossControl x:Name="picrossControl">
-            <controls:PiCrossControl.SquareTemplate>
-                <DataTemplate>
-                    <Rectangle Width="32" Height="32" Stroke="Black">
-                        <Rectangle.Fill>
-                            <Binding Path="Contents.Value">
-                                <Binding.Converter>
-                                    <local:SquareConverter Empty="White" Filled="Black" Unknown="Gray" />
-                                </Binding.Converter>
-                            </Binding>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                </DataTemplate>
-            </controls:PiCrossControl.SquareTemplate>
-            <controls:PiCrossControl.RowConstraintsTemplate>
-                <DataTemplate>
-                    <ItemsControl ItemsSource="{Binding RowConstraints}" >
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Width="32" Height="32" Text="{Binding}"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </DataTemplate>
-            </controls:PiCrossControl.RowConstraintsTemplate>
-        </controls:PiCrossControl>
-        
+        <ContentControl Content="{Binding ActiveWindow}"/>
     </Grid>
 </Window>
