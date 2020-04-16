@@ -27,6 +27,23 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
+
+           
+            var puzzle = Puzzle.FromRowStrings(
+                "xxxxxx",
+                "x....x",
+                "x....x",
+                "x....x",
+                "xxxxxx"
+                );
+            var facade = new PiCrossFacade();
+            var playablePuzzle = facade.CreatePlayablePuzzle(puzzle);
+
+            playablePuzzle.Grid[new Vector2D(0, 0)].Contents.Value = Square.FILLED;
+            playablePuzzle.Grid[new Vector2D(1, 0)].Contents.Value = Square.EMPTY;
+
+            picrossControl.Grid = playablePuzzle.Grid;
+            picrossControl.RowConstraints = playablePuzzle.RowConstraints;
         }
     }
 }
