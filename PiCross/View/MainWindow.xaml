@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:View"
         xmlns:controls="clr-namespace:View.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1440">
+        Title="MainWindow" Height="500" Width="500">
     <Grid>
         <controls:PiCrossControl x:Name="picrossControl">
             <controls:PiCrossControl.SquareTemplate>
