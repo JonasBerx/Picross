@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:View"
         xmlns:controls="clr-namespace:View.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    
+        Title="MainWindow" Height="900" Width="1440">
     <Grid>
         <controls:PiCrossControl x:Name="picrossControl">
             <controls:PiCrossControl.SquareTemplate>
@@ -25,7 +24,7 @@
             </controls:PiCrossControl.SquareTemplate>
             <controls:PiCrossControl.RowConstraintsTemplate>
                 <DataTemplate>
-                    <ItemsControl ItemsSource="{Binding RowConstraints}" >
+                    <ItemsControl ItemsSource="{Binding Values}" >
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" />
@@ -33,13 +32,28 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Width="32" Height="32" Text="{Binding}"/>
+                                <TextBlock Width="32" Height="32" Text="{Binding Value}"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </DataTemplate>
             </controls:PiCrossControl.RowConstraintsTemplate>
+            <controls:PiCrossControl.ColumnConstraintsTemplate>
+                <DataTemplate>
+                    <ItemsControl ItemsSource="{Binding Values}" >
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Width="32" Height="32" Text="{Binding Value}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </DataTemplate>
+            </controls:PiCrossControl.ColumnConstraintsTemplate>
         </controls:PiCrossControl>
-        
     </Grid>
 </Window>

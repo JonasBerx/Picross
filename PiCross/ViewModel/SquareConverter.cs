@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace View 
+namespace ViewModel
 {
     public class SquareConverter : IValueConverter
     {
