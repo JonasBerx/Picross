@@ -93,7 +93,7 @@
         <StackPanel Width="auto" Height="auto" Background="#e6e6e6">
                 
             <Button Content="Main menu" Command="{Binding MenuCommand}"/>
-            <Button Content="Different Puzzle" Command="{Binding PuzzleMenuCommand}"/>
+                <Button Content="Different Puzzle" Command="{Binding PuzzleMenuCommand}"/>
                 <TextBlock Text="{Binding Time}">
                     <TextBlock.Visibility>
                         <Binding Path="IsSolved.Value">
@@ -116,14 +116,17 @@
                 </StackPanel>
             </GroupBox>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Command="{Binding MenuCommand}">
-                        <Image Source="https://simpleicon.com/wp-content/uploads/reverse.png" Width="32" Height="32"/>
+                    <Button Command="{Binding RewindMusic}">
+                        <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-backward-512.png" Width="32" Height="32"/>
                     </Button>
-                    <Button Command="{Binding MenuCommand}">
-                        <Image Source="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" Width="32" Height="32"/>
+                    <Button Command="{Binding PlayMusic}">
+                        <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-play-512.png" Width="32" Height="32"/>
                     </Button>
-                    <Button Command="{Binding MenuCommand}">
-                        <Image Source="https://cdn.onlinewebfonts.com/svg/img_2409.png" Width="32" Height="32"/>
+                    <Button Command="{Binding PauseMusic}">
+                        <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png" Width="32" Height="32"/>
+                    </Button>
+                    <Button Command="{Binding FastForwardMusic}">
+                        <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-forward-512.png" Width="32" Height="32"/>
                     </Button>
 
                 </StackPanel>

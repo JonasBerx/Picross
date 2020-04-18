@@ -23,6 +23,9 @@ namespace ViewModel
             this.Start(mainViewModel, PlayablePuzzle);
             this.MenuCommand = new Command(() => this.Vm.StartView());
             this.PuzzleMenuCommand = new Command(() => this.Vm.LevelSelect());
+            this.PlayMusic = new Command(() => this.Vm.PlayMusic());
+            this.PauseMusic = new Command(() => this.Vm.PauseMusic());
+            this.RewindMusic = new Command(() => this.Vm.RewindMusic());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,6 +36,9 @@ namespace ViewModel
         public MainViewModel Vm { get; private set; }
         public ICommand MenuCommand { get; }
         public ICommand PuzzleMenuCommand { get; }
+        public ICommand PlayMusic { get; }
+        public ICommand PauseMusic { get; }
+        public ICommand RewindMusic { get; }
         public Chronometer Chronometer { get; private set; }
 
         public void Start(MainViewModel viewModel, IPlayablePuzzle puzzle)
@@ -51,7 +57,7 @@ namespace ViewModel
         {
             get
             {
-                Debug.WriteLine(PlayablePuzzle.IsSolved.Value);
+               
                 return PlayablePuzzle.IsSolved;
             }
         }
@@ -61,6 +67,7 @@ namespace ViewModel
             {
                 return Chronometer.TotalTime;
             }
+            //TODO Fix setter
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Utility
             started = true;
             Debug.WriteLine("Started");
             lastTick = DateTime.Now;
-            Tick();
+            
         }
 
         public void Pause()

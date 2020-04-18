@@ -77,5 +77,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\1.mp3" />
+    <Content Include="Resources\VanillaDreams.wav" />
+    <Content Include="Resources\VanillaDreamsLoop.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
