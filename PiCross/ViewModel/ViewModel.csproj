@@ -79,6 +79,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\2.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\anthem.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

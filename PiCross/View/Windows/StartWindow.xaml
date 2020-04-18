@@ -21,14 +21,14 @@
 
             <Grid.Background>
             <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
-                <GradientStop Color="#a12020" Offset="0"/>
-                <GradientStop Color="#c24242" Offset="0.1"/>
-                <GradientStop Color="#c25d5d" Offset="0.5"/>
+                <GradientStop Color="#0d37d1" Offset="0"/>
+                <GradientStop Color="#192e7d" Offset="0.1"/>
+                <GradientStop Color="#5e6ead" Offset="0.5"/>
             </LinearGradientBrush>
         </Grid.Background>
 
 
-        <TextBlock Name="PiText"  Grid.Row="0" FontFamily="JMH Crom II" Text="Welcome to:&#x0a;OurCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Name="PiText"  Grid.Row="0" FontFamily="JMH Crom I" Text="Welcome to:&#x0a;SansCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
                     <BeginStoryboard>

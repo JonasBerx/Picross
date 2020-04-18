@@ -25,8 +25,8 @@ namespace ViewModel
             this.ActiveWindow = new StartScreenViewModel(this);
             this.PiCrossFacade = new PiCrossFacade();
             this.Player = new MediaPlayer();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\anthem.wav"));
-            Player.Volume = 0.05f;
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
+            Player.Volume = 0.5f;
             Player.Play();
             
         }

@@ -29,16 +29,16 @@
     </Grid.RowDefinitions>
     <Grid.Background>
             <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
-                <GradientStop Color="#a12020" Offset="0"/>
-                <GradientStop Color="#c24242" Offset="0.1"/>
-                <GradientStop Color="#c25d5d" Offset="0.5"/>
+                <GradientStop Color="#0d37d1" Offset="0"/>
+                <GradientStop Color="#192e7d" Offset="0.1"/>
+                <GradientStop Color="#5e6ead" Offset="0.5"/>
             </LinearGradientBrush>
         </Grid.Background>
 
     <Border BorderBrush="Black" BorderThickness="2">
         <StackPanel Width="auto" Height="auto" Background="#e6e6e6" Opacity="0.5"/>
     </Border>
-        <TextBlock FontFamily="JMH Crom II" Text="OurCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock FontFamily="JMH Crom II" Text="SansCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     <controls:PiCrossControl Grid.Row="1" x:Name="PicrossControl" VerticalAlignment="Center" HorizontalAlignment="Center" Grid="{Binding Grid}" RowConstraints="{Binding PlayablePuzzle.RowConstraints}" ColumnConstraints="{Binding PlayablePuzzle.ColumnConstraints}">
         <controls:PiCrossControl.SquareTemplate>
