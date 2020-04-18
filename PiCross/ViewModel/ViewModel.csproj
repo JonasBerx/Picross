@@ -82,9 +82,12 @@
     <Content Include="Resources\2.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\200w.gif" />
+    <Content Include="Resources\2r5r.gif" />
     <Content Include="Resources\anthem.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\looker.png" />
     <Content Include="Resources\VanillaDreams.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -4,9 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:View.Windows"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DropShadowEffect x:Key="Shadow"
+            ShadowDepth="6"
+            Direction="330"
+            Color="Black"
+            Opacity="0.5"
+            BlurRadius="12"/>
+
+        <Style x:Key="ButttonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Margin" Value="0 10 0 10"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
+
+
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
                 <GradientStop Color="#0d37d1" Offset="0"/>
@@ -14,30 +32,61 @@
                 <GradientStop Color="#5e6ead" Offset="0.5"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <StackPanel>
-            <Button Content="Easy (5x5)">
+        
+        <Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\2r5r.gif" Margin="478,-22,10,145">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="Sans" 
+                                Storyboard.TargetProperty="(Image.Opacity)"
+                                From="0.0" To="0.7" Duration="0:0:5"
+                                AutoReverse="True" RepeatBehavior="Forever"
+                                BeginTime="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <TextBlock Name="PiText" FontFamily="JMH Crom I" Text="Choose your puzzle" FontWeight="ExtraBold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,100,372">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="PiText" 
+                                Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                From="0.0" To="1.0" Duration="0:0:2.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Easy (5x5)" Style="{StaticResource ButttonStyle}"  Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="5" />
+                    <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="5"/>
                 </Button.InputBindings>
             </Button>
-            <Button Content="Normal (7x7)">
+            <Button Content="Normal (7x7)" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="7" />
                 </Button.InputBindings>
             </Button>
-            <Button Content="Hard (10x10)">
+            <Button Content="Hard (10x10)" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="10" />
                 </Button.InputBindings>
             </Button>
 
-            <Button Content="Main menu">
+            <Button Content="Main menu" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding MenuCommand}"/>
                 </Button.InputBindings>
             </Button>
-
-           
         </StackPanel>
+
+
     </Grid>
 </UserControl>
