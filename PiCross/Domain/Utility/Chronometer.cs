@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,9 @@ namespace Utility
         public void Start()
         {
             started = true;
+            Debug.WriteLine("Started");
             lastTick = DateTime.Now;
+            Tick();
         }
 
         public void Pause()
@@ -36,6 +39,7 @@ namespace Utility
         {
             if ( started )
             {
+                
                 var now = DateTime.Now;
                 var delta = now - lastTick;
                 lastTick = now;

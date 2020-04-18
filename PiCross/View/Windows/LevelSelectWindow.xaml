@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="View.Windows.LevelSelectWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
+                <GradientStop Color="#222222" Offset="0"/>
+                <GradientStop Color="#555555" Offset="0.1"/>
+                <GradientStop Color="#aaaaaa" Offset="0.5"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel>
+            <Button Content="Easy (5x5)">
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="5" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="Normal (7x7)">
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="7" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="Hard (10x10)">
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="10" />
+                </Button.InputBindings>
+            </Button>
+
+            <Button Content="Main menu">
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding MenuCommand}"/>
+                </Button.InputBindings>
+            </Button>
+
+           
+        </StackPanel>
+    </Grid>
+</UserControl>
