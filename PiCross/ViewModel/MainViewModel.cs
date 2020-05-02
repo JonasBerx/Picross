@@ -10,6 +10,7 @@ using System.Media;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -72,6 +73,12 @@ namespace ViewModel
         {
             this.ActiveWindow = new LevelSelectViewModel(this);
         }
+        public void Options()
+        {
+            Debug.WriteLine("Getting in options");
+
+            this.ActiveWindow = new OptionsViewModel(this);
+        }
 
         public void StartView()
         {
@@ -81,6 +88,28 @@ namespace ViewModel
         public void CloseWindow()
         {
             this.ClosingAction?.Invoke();
+        }
+        public void Sans()
+        {
+            SetSkin("Sans");
+        }
+
+        public void Easter()
+        {
+            SetSkin("Easter");
+        }
+
+        public void CaramelDansen()
+        {
+            SetSkin("CarmelDansen");
+        }
+
+        private void SetSkin(string name)
+        {
+            var resourceDictionary = new ResourceDictionary();
+            var uri = $"Skins/{name}.xaml";
+            resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri(uri, UriKind.Relative)));
+            Application.Current.Resources = resourceDictionary;
         }
     }
 }

@@ -24,6 +24,5 @@ namespace View.Windows
         {
             InitializeComponent();
         }
-        
     }
 }

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:View.Skins"
+                    xmlns:gif="http://wpfanimatedgif.codeplex.com">
+
+    <Style x:Key="BackgroundStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\carameldansen.gif"/>
+            </Setter.Value>
+        </Setter>
+        
+    </Style>
+
+</ResourceDictionary>

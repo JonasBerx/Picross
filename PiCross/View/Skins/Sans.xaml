@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:View.Skins">
+
+    <Style x:Key="BackgroundStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
+                    <GradientStop Color="#0d37d1" Offset="0"/>
+                    <GradientStop Color="#192e7d" Offset="0.1"/>
+                    <GradientStop Color="#5e6ead" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+            
+        </Setter>
+    </Style>
+        
+
+    
+    
+</ResourceDictionary>

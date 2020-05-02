@@ -22,18 +22,18 @@
             <Setter Property="FontSize" Value="18"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Style="{DynamicResource BackgroundStyle}">
 
 
-        <Grid.Background>
+        <!--<Grid.Background>
             <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
                 <GradientStop Color="#0d37d1" Offset="0"/>
                 <GradientStop Color="#192e7d" Offset="0.1"/>
                 <GradientStop Color="#5e6ead" Offset="0.5"/>
             </LinearGradientBrush>
-        </Grid.Background>
+        </Grid.Background>-->
         
-        <Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\2r5r.gif" Margin="478,-22,10,145">
+        <Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\2r5r.gif" Margin="478,-22,10,145" >
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Image.Loaded">
                     <BeginStoryboard>
@@ -83,6 +83,11 @@
             <Button Content="Main menu" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding MenuCommand}"/>
+                </Button.InputBindings>
+            </Button>
+            <Button Content="Options" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding OptionsCommand}"/>
                 </Button.InputBindings>
             </Button>
         </StackPanel>

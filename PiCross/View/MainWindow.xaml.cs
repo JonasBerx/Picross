@@ -27,10 +27,8 @@ namespace View
        
         public MainWindow()
         {
-            InitializeComponent();
-
-            
-            
+            InitializeComponent(); 
         }
+        
     }
 }

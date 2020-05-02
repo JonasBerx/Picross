@@ -6,7 +6,7 @@
             xmlns:local="clr-namespace:View"
             mc:Ignorable="d"
             Title="Pi-cross" Height="750" Width="1000">
-    <Grid>
+    <Grid x:Name="MainGrid">
         <ContentControl Content="{Binding ActiveWindow}"/>
     </Grid>
 </Window>

@@ -25,7 +25,7 @@
             <Setter Property="FontSize" Value="24"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Style="{DynamicResource BackgroundStyle}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="2*" />
@@ -35,13 +35,13 @@
             <RowDefinition Height="6*" />
             <RowDefinition Height="1"/>
         </Grid.RowDefinitions>
-        <Grid.Background>
+        <!--<Grid.Background>
             <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
                 <GradientStop Color="#0d37d1" Offset="0"/>
                 <GradientStop Color="#192e7d" Offset="0.1"/>
                 <GradientStop Color="#5e6ead" Offset="0.5"/>
             </LinearGradientBrush>
-        </Grid.Background>
+        </Grid.Background>-->
 
         <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2">
             <StackPanel Width="auto" Height="auto" Background="#e6e6e6" Opacity="0.5"/>
@@ -103,15 +103,8 @@
 
                 <Button Content="Main menu" Command="{Binding MenuCommand}" Style="{StaticResource ButtonStyle}"/>
                 <Button Content="Different Puzzle" Command="{Binding PuzzleMenuCommand}" Style="{StaticResource ButtonStyle}"/>
-                <TextBlock Text="{Binding Time}">
-                    <TextBlock.Visibility>
-                        <Binding Path="IsSolved.Value">
-                            <Binding.Converter>
-                                <converters:BoolConverter True="{x:Static Visibility.Visible}" False="{x:Static Visibility.Hidden}" />
-                            </Binding.Converter>
-                        </Binding>
-                    </TextBlock.Visibility>
-                </TextBlock>
+                <Button Content="Theme menu" Command="{Binding OptionCommand}" Style="{StaticResource ButtonStyle}"/>
+                
                 <GroupBox Header="Controls" Margin="10" Padding="10">
                     <StackPanel>
                         <WrapPanel>
@@ -124,6 +117,7 @@
                         </WrapPanel>
                     </StackPanel>
                 </GroupBox>
+                
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Command="{Binding RewindMusic}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-backward-512.png" Width="32" Height="32"/>
@@ -134,12 +128,30 @@
                     <Button Command="{Binding PauseMusic}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png" Width="32" Height="32"/>
                     </Button>
-                    <Button Command="{Binding FastForwardMusic}">
+                    <Button>
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-forward-512.png" Width="32" Height="32"/>
+                        <!--Command="{Binding FastForwardMusic}"-->
                     </Button>
 
                 </StackPanel>
+                <GroupBox Header="Time" Margin="10" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Chronometer.TotalTime.Value}"/>
+                    </StackPanel>
+                </GroupBox>
+                <Button Content="You solved this puzzle" Command="{Binding PuzzleMenuCommand}">
+                    <Button.Visibility>
+                        <Binding Path="IsSolved.Value">
+                            <Binding.Converter>
+                                <converters:BoolConverter True="{x:Static Visibility.Visible}" False="{x:Static Visibility.Hidden}" />
+                            </Binding.Converter>
+                        </Binding>
+                    </Button.Visibility>
+
+                </Button>
             </StackPanel>
+            
+            
         </Border>
     </Grid>
 </UserControl>

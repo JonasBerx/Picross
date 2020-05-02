@@ -50,6 +50,7 @@
     <Compile Include="GameViewModel.cs" />
     <Compile Include="LevelSelectViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="OptionsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuzzleSquareViewModel.cs" />
     <Compile Include="StartScreenViewModel.cs" />
@@ -87,6 +88,7 @@
     <Content Include="Resources\anthem.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\carameldansen.gif" />
     <Content Include="Resources\looker.png" />
     <Content Include="Resources\VanillaDreams.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

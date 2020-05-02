@@ -16,11 +16,13 @@ namespace ViewModel
             this.vm = mainViewModel;
             this.LevelSelectCommand = new LevelSelectCommand(mainViewModel);
             this.MenuCommand = new Command(() => this.vm.StartView());
+            this.OptionsCommand = new Command(() => this.vm.Options());
         }
 
         private MainViewModel vm { get; }
         public ICommand LevelSelectCommand { get; }
         public ICommand MenuCommand { get; }
+        public ICommand OptionsCommand { get; }
     }
 
     public class LevelSelectCommand : ICommand
