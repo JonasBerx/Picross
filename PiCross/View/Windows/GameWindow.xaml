@@ -112,13 +112,13 @@
                 </GroupBox>
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Command="{Binding RewindMusic}">
+                    <Button Command="{Binding Rewind}">
                         <Image Source="https://www.pngfind.com/pngs/m/654-6548807_back-svg-icon-rewind-icon-png-transparent-png.png" Width="32" Height="32"/>
                     </Button>
-                    <Button Command="{Binding PlayMusic}">
+                    <Button Command="{Binding Play}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-play-512.png" Width="32" Height="32"/>
                     </Button>
-                    <Button Command="{Binding PauseMusic}">
+                    <Button Command="{Binding Stop}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png" Width="32" Height="32"/>
                     </Button>
 

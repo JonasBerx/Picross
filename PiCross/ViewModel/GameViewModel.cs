@@ -25,9 +25,9 @@ namespace ViewModel
             this.MenuCommand = new Command(() => this.Vm.StartView());
             this.PuzzleMenuCommand = new Command(() => this.Vm.LevelSelect());
             this.OptionCommand = new Command(() => this.Vm.Options());
-            this.PlayMusic = new Command(() => this.Vm.PlayMusic());
-            this.PauseMusic = new Command(() => this.Vm.PauseMusic());
-            this.RewindMusic = new Command(() => this.Vm.RewindMusic());
+            this.Play = new Command(() => this.Vm.Play());
+            this.Stop = new Command(() => this.Vm.Stop());
+            this.Rewind = new Command(() => this.Vm.Rewind());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -40,9 +40,9 @@ namespace ViewModel
         public ICommand MenuCommand { get; }
         public ICommand OptionCommand { get; }
         public ICommand PuzzleMenuCommand { get; }
-        public ICommand PlayMusic { get; }
-        public ICommand PauseMusic { get; }
-        public ICommand RewindMusic { get; }
+        public ICommand Play { get; }
+        public ICommand Stop { get; }
+        public ICommand Rewind { get; }
         private DispatcherTimer timer;
 
 

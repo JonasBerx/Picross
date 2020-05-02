@@ -19,7 +19,7 @@ namespace ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private MediaPlayer Player;
+        private readonly MediaPlayer Player;
         public MainViewModel()
         {
             
@@ -27,8 +27,10 @@ namespace ViewModel
             this.ActiveWindow = new StartScreenViewModel(this);
             this.PiCrossFacade = new PiCrossFacade();
             this.Player = new MediaPlayer();
-            
+            this.Theme = new Theme(this, Player);
+            this.Music = new Music(Player);
             CaramelDansen();
+            
 
         }
 
@@ -36,6 +38,8 @@ namespace ViewModel
         private object activeWindow;
         public Action ClosingAction { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
+        public Theme Theme { get; }
+        public Music Music { get; }
 
         public object ActiveWindow
         {
@@ -50,18 +54,19 @@ namespace ViewModel
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ActiveWindow)));
             }
         }
-
-        public void RewindMusic()
+        
+        public void Rewind()
         {
-            Player.Position = new TimeSpan(-5,-5,-5);
+            Debug.WriteLine("Rewinding");
+            Music.Rewind();
         }
-        public void PlayMusic()
+        public void Play()
         {
-            Player.Play();
+            Music.Play();
         }
-        public void PauseMusic()
+        public void Stop()
         {
-           Player.Pause();
+           Music.Stop();
         }
         public void StartGame(Puzzle puzzle)
         {
@@ -88,40 +93,33 @@ namespace ViewModel
         {
             this.ClosingAction?.Invoke();
         }
-        public void Sans()
-        {
-            SetSkin("Sans");
-            Player.Stop();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
-            Player.Play();
-            StartView();
-        }
 
+        public void Sans() 
+        {
+            this.Theme.Sans();
+        }
         public void Easter()
         {
-            SetSkin("Easter");
-            Player.Stop();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\1.mp3"));
-            Player.Play();
-            StartView();
+            this.Theme.Easter();
         }
-
         public void CaramelDansen()
         {
-            SetSkin("CarmelDansen");
-            Player.Stop();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\3.mp3"));
-            Player.Play();
-            StartView();
+            this.Theme.CaramelDansen();
         }
 
-        private void SetSkin(string name)
-        {
-            var resourceDictionary = new ResourceDictionary();
-            var uri = $"Skins/{name}.xaml";
-            resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri(uri, UriKind.Relative)));
-            resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri($"Skins/shared.xaml", UriKind.Relative)));
-            Application.Current.Resources = resourceDictionary;
-        }
+
+        //private void SetSkin(string name, string song)
+        //{
+        //    var resourceDictionary = new ResourceDictionary();
+        //    var uri = $"Skins/{name}.xaml";
+        //    resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri(uri, UriKind.Relative)));
+        //    resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri($"Skins/shared.xaml", UriKind.Relative)));
+        //    Application.Current.Resources = resourceDictionary;
+
+        //    Player.Stop();
+        //    Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"\\Resources\\{song}.mp3"));
+        //    Player.Play();
+        //    StartView();
+        //}
     }
 }

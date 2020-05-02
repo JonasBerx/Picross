@@ -4,21 +4,23 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace ViewModel
 {
     public class OptionsViewModel
     {
-        public OptionsViewModel(MainViewModel mainWindowView)
+        public OptionsViewModel(MainViewModel main)
         {
-            this.vm = mainWindowView;
+            this.vm = main;
             this.MenuCommand = new Command(() => this.vm.StartView());
             this.SansCommand = new Command(() => this.vm.Sans());
             this.EasterCommand = new Command(() => this.vm.Easter());
             this.CaramelDansenCommand = new Command(() => this.vm.CaramelDansen());
-            
 
+            
         }
 
         private MainViewModel vm { get; }

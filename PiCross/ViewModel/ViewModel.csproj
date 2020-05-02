@@ -50,10 +50,12 @@
     <Compile Include="GameViewModel.cs" />
     <Compile Include="LevelSelectViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Music.cs" />
     <Compile Include="OptionsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuzzleSquareViewModel.cs" />
     <Compile Include="StartScreenViewModel.cs" />
+    <Compile Include="Theme.cs" />
     <Compile Include="ViewModelWindow.xaml.cs">
       <DependentUpon>ViewModelWindow.xaml</DependentUpon>
     </Compile>
@@ -95,17 +97,10 @@
     <Content Include="Resources\3.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\anthem.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\carameldansen.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\looker.png" />
-    <Content Include="Resources\VanillaDreams.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\VanillaDreamsLoop.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
