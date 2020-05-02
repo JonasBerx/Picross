@@ -22,7 +22,7 @@
             <Setter Property="FontSize" Value="18"/>
         </Style>
     </UserControl.Resources>
-    <Grid Style="{DynamicResource BackgroundStyle}">
+    <Grid>
 
 
         <!--<Grid.Background>

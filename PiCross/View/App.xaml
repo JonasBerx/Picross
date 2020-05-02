@@ -17,6 +17,6 @@
         <DataTemplate DataType="{x:Type viewmodel:OptionsViewModel}">
             <windows:OptionsWindow/>
         </DataTemplate>
-        
+
     </Application.Resources>
 </Application>

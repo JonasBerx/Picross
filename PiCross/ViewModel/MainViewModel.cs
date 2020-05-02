@@ -22,14 +22,15 @@ namespace ViewModel
         private MediaPlayer Player;
         public MainViewModel()
         {
+            CaramelDansen();
             Debug.WriteLine("Constructor Main viewmodel");
             this.ActiveWindow = new StartScreenViewModel(this);
             this.PiCrossFacade = new PiCrossFacade();
             this.Player = new MediaPlayer();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
-            Player.Volume = 0.5f;
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\3.mp3"));
+            Player.Volume = 0.03f;
             Player.Play();
-            Sans();
+            
         }
 
         public PiCrossFacade PiCrossFacade { get; }
@@ -62,6 +63,12 @@ namespace ViewModel
         public void PauseMusic()
         {
            Player.Pause();
+        }
+        public void NextSong()
+        {
+            Player.Stop();
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
+            Player.Play();
         }
 
         public void StartGame(Puzzle puzzle)

@@ -28,6 +28,7 @@ namespace ViewModel
             this.PlayMusic = new Command(() => this.Vm.PlayMusic());
             this.PauseMusic = new Command(() => this.Vm.PauseMusic());
             this.RewindMusic = new Command(() => this.Vm.RewindMusic());
+            this.NextMusic = new Command(() => this.Vm.NextSong());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -43,6 +44,7 @@ namespace ViewModel
         public ICommand PlayMusic { get; }
         public ICommand PauseMusic { get; }
         public ICommand RewindMusic { get; }
+        public ICommand NextMusic { get; }
         private DispatcherTimer timer;
 
 

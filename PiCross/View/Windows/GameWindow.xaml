@@ -25,7 +25,7 @@
             <Setter Property="FontSize" Value="24"/>
         </Style>
     </UserControl.Resources>
-    <Grid Style="{DynamicResource BackgroundStyle}">
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="2*" />
@@ -46,7 +46,7 @@
         <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2">
             <StackPanel Width="auto" Height="auto" Background="#e6e6e6" Opacity="0.5"/>
         </Border>
-        <TextBlock FontFamily="JMH Crom II" Text="SansCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock FontFamily="JMH Crom II" Text="PiCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
         
 
         <controls:PiCrossControl Grid.Row="1" x:Name="PicrossControl" VerticalAlignment="Center" HorizontalAlignment="Center" Grid="{Binding Grid}" RowConstraints="{Binding PlayablePuzzle.RowConstraints}" ColumnConstraints="{Binding PlayablePuzzle.ColumnConstraints}">
@@ -128,9 +128,9 @@
                     <Button Command="{Binding PauseMusic}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png" Width="32" Height="32"/>
                     </Button>
-                    <Button>
+                    <Button Command="{Binding NextMusic}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-forward-512.png" Width="32" Height="32"/>
-                        <!--Command="{Binding FastForwardMusic}"-->
+                        
                     </Button>
 
                 </StackPanel>
