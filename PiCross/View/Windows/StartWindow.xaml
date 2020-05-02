@@ -18,17 +18,7 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-
-
-        <!--<Grid.Background>
-            <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
-                <GradientStop Color="#0d37d1" Offset="0"/>
-                <GradientStop Color="#192e7d" Offset="0.1"/>
-                <GradientStop Color="#5e6ead" Offset="0.5"/>
-            </LinearGradientBrush>
-        </Grid.Background>-->
-
-
+        
         <TextBlock Name="PiText"  Grid.Row="0" FontFamily="JMH Crom I" Text="Welcome to:&#x0a; PiCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
@@ -37,14 +27,14 @@
                             <DoubleAnimation
                                 Storyboard.TargetName="PiText" 
                                 Storyboard.TargetProperty="(TextBlock.Opacity)"
-                                From="0.0" To="1.0" Duration="0:0:2.5"/>
+                                From="0.0" To="1.0" Duration="0:0:1.5"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
             </TextBlock.Triggers>
         </TextBlock>
 
-        <Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\200w.gif" Width="96" Height="96" Margin="521,129,10,25">
+        <!--<Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\200w.gif" Width="96" Height="96" Margin="521,129,10,25">
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Image.Loaded">
                     <BeginStoryboard>
@@ -58,14 +48,14 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </Image.Triggers>
-        </Image>
+        </Image>-->
 
         <Button Name="Start" Opacity="0.0" Grid.Row="1" Width="512" Height="128" Content="Start" FontSize="50" FontFamily="JMH Crom II" FontWeight="ExtraBold" Command="{Binding LevelSelect}">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="Start" Storyboard.TargetProperty="(Button.Opacity)" BeginTime="0:0:1" From="0.0" To="1.0" Duration="0:0:3"/>
+                            <DoubleAnimation Storyboard.TargetName="Start" Storyboard.TargetProperty="(Button.Opacity)" BeginTime="0:0:1" From="0.0" To="1.0" Duration="0:0:2"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -76,7 +66,7 @@
                 <EventTrigger RoutedEvent="Button.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="(Button.Opacity)" BeginTime="0:0:1" From="0.0" To="1.0" Duration="0:0:3"/>
+                            <DoubleAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="(Button.Opacity)" BeginTime="0:0:1" From="0.0" To="1.0" Duration="0:0:2"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

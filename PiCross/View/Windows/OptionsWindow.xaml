@@ -26,12 +26,11 @@
         <StackPanel>
             <GroupBox Header="Theme" Margin="10" Padding="10">
                 <StackPanel>
-                    <Button Content="Sans" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
+                    <Button Content="Sans" Style="{DynamicResource ButttonStyle}" Effect="{StaticResource Shadow }">
                         <Button.InputBindings>
                             <MouseBinding Gesture="LeftClick" Command="{Binding SansCommand}"/>
                         </Button.InputBindings>
                     </Button>
-
                     <Button Content="Easter" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                         <Button.InputBindings>
                             <MouseBinding Gesture="LeftClick" Command="{Binding EasterCommand}"/>

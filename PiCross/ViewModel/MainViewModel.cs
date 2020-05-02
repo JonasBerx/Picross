@@ -22,15 +22,14 @@ namespace ViewModel
         private MediaPlayer Player;
         public MainViewModel()
         {
-            CaramelDansen();
+            
             Debug.WriteLine("Constructor Main viewmodel");
             this.ActiveWindow = new StartScreenViewModel(this);
             this.PiCrossFacade = new PiCrossFacade();
             this.Player = new MediaPlayer();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\3.mp3"));
-            Player.Volume = 0.03f;
-            Player.Play();
             
+            CaramelDansen();
+
         }
 
         public PiCrossFacade PiCrossFacade { get; }
@@ -64,13 +63,6 @@ namespace ViewModel
         {
            Player.Pause();
         }
-        public void NextSong()
-        {
-            Player.Stop();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
-            Player.Play();
-        }
-
         public void StartGame(Puzzle puzzle)
         {
             this.ActiveWindow = new GameViewModel(this, puzzle);
@@ -99,16 +91,28 @@ namespace ViewModel
         public void Sans()
         {
             SetSkin("Sans");
+            Player.Stop();
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
+            Player.Play();
+            StartView();
         }
 
         public void Easter()
         {
             SetSkin("Easter");
+            Player.Stop();
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\1.mp3"));
+            Player.Play();
+            StartView();
         }
 
         public void CaramelDansen()
         {
             SetSkin("CarmelDansen");
+            Player.Stop();
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\3.mp3"));
+            Player.Play();
+            StartView();
         }
 
         private void SetSkin(string name)
@@ -116,6 +120,7 @@ namespace ViewModel
             var resourceDictionary = new ResourceDictionary();
             var uri = $"Skins/{name}.xaml";
             resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri(uri, UriKind.Relative)));
+            resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri($"Skins/shared.xaml", UriKind.Relative)));
             Application.Current.Resources = resourceDictionary;
         }
     }

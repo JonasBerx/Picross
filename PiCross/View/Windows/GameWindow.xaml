@@ -35,13 +35,6 @@
             <RowDefinition Height="6*" />
             <RowDefinition Height="1"/>
         </Grid.RowDefinitions>
-        <!--<Grid.Background>
-            <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
-                <GradientStop Color="#0d37d1" Offset="0"/>
-                <GradientStop Color="#192e7d" Offset="0.1"/>
-                <GradientStop Color="#5e6ead" Offset="0.5"/>
-            </LinearGradientBrush>
-        </Grid.Background>-->
 
         <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2">
             <StackPanel Width="auto" Height="auto" Background="#e6e6e6" Opacity="0.5"/>
@@ -120,17 +113,13 @@
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Command="{Binding RewindMusic}">
-                        <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-backward-512.png" Width="32" Height="32"/>
+                        <Image Source="https://www.pngfind.com/pngs/m/654-6548807_back-svg-icon-rewind-icon-png-transparent-png.png" Width="32" Height="32"/>
                     </Button>
                     <Button Command="{Binding PlayMusic}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-play-512.png" Width="32" Height="32"/>
                     </Button>
                     <Button Command="{Binding PauseMusic}">
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png" Width="32" Height="32"/>
-                    </Button>
-                    <Button Command="{Binding NextMusic}">
-                        <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-skip-forward-512.png" Width="32" Height="32"/>
-                        
                     </Button>
 
                 </StackPanel>
@@ -149,6 +138,7 @@
                     </Button.Visibility>
 
                 </Button>
+                <Image gif:ImageBehavior.AnimatedSource="{DynamicResource ThemaGif}"/>
             </StackPanel>
             
             

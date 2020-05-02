@@ -23,17 +23,8 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-
-
-        <!--<Grid.Background>
-            <LinearGradientBrush EndPoint="0,3" StartPoint="0,0">
-                <GradientStop Color="#0d37d1" Offset="0"/>
-                <GradientStop Color="#192e7d" Offset="0.1"/>
-                <GradientStop Color="#5e6ead" Offset="0.5"/>
-            </LinearGradientBrush>
-        </Grid.Background>-->
-        
-        <Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\2r5r.gif" Margin="478,-22,10,145" >
+  
+        <!--<Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\2r5r.gif" Margin="478,-22,10,145" >
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Image.Loaded">
                     <BeginStoryboard>
@@ -48,7 +39,7 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </Image.Triggers>
-        </Image>
+        </Image>-->
         <TextBlock Name="PiText" FontFamily="JMH Crom I" Text="Choose your puzzle" FontWeight="ExtraBold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,100,372">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
