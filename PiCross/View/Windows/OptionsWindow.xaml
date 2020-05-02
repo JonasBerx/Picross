@@ -42,7 +42,6 @@
                             <MouseBinding Gesture="LeftClick" Command="{Binding CaramelDansenCommand}"/>
                         </Button.InputBindings>
                     </Button>
-
                     <Button Content="Main menu" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                         <Button.InputBindings>
                             <MouseBinding Gesture="LeftClick" Command="{Binding MenuCommand}"/>

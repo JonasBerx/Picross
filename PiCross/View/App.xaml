@@ -17,6 +17,6 @@
         <DataTemplate DataType="{x:Type viewmodel:OptionsViewModel}">
             <windows:OptionsWindow/>
         </DataTemplate>
-        <ResourceDictionary x:Key="Grid" Source="Skins\red.xaml" />
+        
     </Application.Resources>
 </Application>

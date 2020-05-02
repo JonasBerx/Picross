@@ -6,10 +6,9 @@
     <Style x:Key="BackgroundStyle" TargetType="{x:Type Grid}">
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\carameldansen.gif"/>
+                <ImageBrush ImageSource="http://images2.fanpop.com/images/photos/7500000/Konata-caramelldansen-caramelldansen-7597997-550-400.gif"/>
             </Setter.Value>
         </Setter>
-        
     </Style>
 
 </ResourceDictionary>

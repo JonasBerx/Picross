@@ -29,7 +29,7 @@ namespace ViewModel
             Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\2.mp3"));
             Player.Volume = 0.5f;
             Player.Play();
-            
+            Sans();
         }
 
         public PiCrossFacade PiCrossFacade { get; }
