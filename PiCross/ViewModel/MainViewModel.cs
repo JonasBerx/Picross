@@ -106,20 +106,5 @@ namespace ViewModel
         {
             this.Theme.CaramelDansen();
         }
-
-
-        //private void SetSkin(string name, string song)
-        //{
-        //    var resourceDictionary = new ResourceDictionary();
-        //    var uri = $"Skins/{name}.xaml";
-        //    resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri(uri, UriKind.Relative)));
-        //    resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri($"Skins/shared.xaml", UriKind.Relative)));
-        //    Application.Current.Resources = resourceDictionary;
-
-        //    Player.Stop();
-        //    Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"\\Resources\\{song}.mp3"));
-        //    Player.Play();
-        //    StartView();
-        //}
     }
 }
