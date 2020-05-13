@@ -23,23 +23,6 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-  
-        <!--<Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\2r5r.gif" Margin="478,-22,10,145" >
-            <Image.Triggers>
-                <EventTrigger RoutedEvent="Image.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation
-                                Storyboard.TargetName="Sans" 
-                                Storyboard.TargetProperty="(Image.Opacity)"
-                                From="0.0" To="0.7" Duration="0:0:5"
-                                AutoReverse="True" RepeatBehavior="Forever"
-                                BeginTime="0:0:1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Image.Triggers>
-        </Image>-->
         <TextBlock Name="PiText" FontFamily="JMH Crom I" Text="Choose your puzzle" FontWeight="ExtraBold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,100,372">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
@@ -54,7 +37,20 @@
                 </EventTrigger>
             </TextBlock.Triggers>
         </TextBlock>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.0">
+            <StackPanel.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                From="0.0" To="1.0" Duration="0:0:1" BeginTime="0:0:1"
+                                />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </StackPanel.Triggers>
+            
             <Button Content="Easy (5x5)" Style="{StaticResource ButttonStyle}"  Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="5"/>
@@ -71,12 +67,12 @@
                 </Button.InputBindings>
             </Button>
 
-            <Button Content="Main menu" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
+            <Button  Content="Main menu" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding MenuCommand}"/>
                 </Button.InputBindings>
             </Button>
-            <Button Content="Options" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
+            <Button  Content="Options" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding OptionsCommand}"/>
                 </Button.InputBindings>

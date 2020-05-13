@@ -18,7 +18,7 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        
+
         <TextBlock Name="PiText"  Grid.Row="0" FontFamily="JMH Crom I" Text="Welcome to:&#x0a; PiCross" FontWeight="ExtraBold" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
@@ -33,22 +33,6 @@
                 </EventTrigger>
             </TextBlock.Triggers>
         </TextBlock>
-
-        <!--<Image Name="Sans" Opacity="0.0" gif:ImageBehavior.AnimatedSource="C:\Users\JojoS\Desktop\2TI-BS\VGO\Picross\PiCross\ViewModel\Resources\200w.gif" Width="96" Height="96" Margin="521,129,10,25">
-            <Image.Triggers>
-                <EventTrigger RoutedEvent="Image.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation
-                                Storyboard.TargetName="Sans" 
-                                Storyboard.TargetProperty="(Image.Opacity)"
-                                From="0.0" To="1.0" Duration="0:0:0.5"
-                                BeginTime="0:0:1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Image.Triggers>
-        </Image>-->
 
         <Button Name="Start" Opacity="0.0" Grid.Row="1" Width="512" Height="128" Content="Start" FontSize="50" FontFamily="JMH Crom II" FontWeight="ExtraBold" Command="{Binding LevelSelect}">
             <Button.Triggers>

@@ -17,6 +17,10 @@
             <GradientStop Color="#000000" Offset="0"/>
             <GradientStop Color="#000000" Offset="0.5"/>
         </LinearGradientBrush>
+        <LinearGradientBrush x:Key="UnknownBrush">
+            <GradientStop Color="gray" Offset="0"/>
+            <GradientStop Color="gray" Offset="0.5"/>
+        </LinearGradientBrush>
         <converters:SquareConverter Empty="{StaticResource EmptyBrush}" Filled="{StaticResource FilledBrush}" Unknown="Gray" x:Key="squareConverter"/>
         <converters:BoolConverter x:Key="boolConverter"/>
         <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
@@ -52,6 +56,7 @@
                         <Button.InputBindings>
                             <MouseBinding Gesture="LeftClick" Command="{Binding FillCommand}" CommandParameter="{Binding PuzzleSquare}" />
                             <MouseBinding Gesture="RightClick" Command="{Binding EmptyCommand}" CommandParameter="{Binding PuzzleSquare}" />
+                            <MouseBinding Gesture="MiddleClick" Command="{Binding UnknownCommand}" CommandParameter="{Binding PuzzleSquare}" />
 
                         </Button.InputBindings>
                     </Button>
@@ -102,11 +107,15 @@
                     <StackPanel>
                         <WrapPanel>
                             <Rectangle Width="32" Height="32" Stroke="Black" Fill="{StaticResource EmptyBrush}"/>
-                            <TextBlock Text=" = Empty (Right-Click)" VerticalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text=" = Empty" VerticalAlignment="Center" FontSize="16"/>
                         </WrapPanel>
                         <WrapPanel>
                             <Rectangle Width="32" Height="32" Stroke="Black" Fill="{StaticResource FilledBrush}"/>
-                            <TextBlock Text=" = Filled (Left-Click)" VerticalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text=" = Filled" VerticalAlignment="Center" FontSize="16"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Rectangle Width="32" Height="32" Stroke="Black" Fill="{StaticResource UnknownBrush}"/>
+                            <TextBlock Text=" = Unknown" VerticalAlignment="Center" FontSize="16"/>
                         </WrapPanel>
                     </StackPanel>
                 </GroupBox>
