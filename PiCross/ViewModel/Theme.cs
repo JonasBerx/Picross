@@ -23,21 +23,21 @@ namespace ViewModel
         private MainViewModel Vm { get; }
         public void Sans()
         {
-            SetSkin("Sans", "2");
+            SetSkin("Sans");
         }
 
         public void Easter()
         {
-            SetSkin("Easter", "1");
+            SetSkin("Easter");
         }
 
         public void CaramelDansen()
         {
-            SetSkin("CarmelDansen", "3");
+            SetSkin("CarmelDansen");
 
         }
 
-        private void SetSkin(string name, string song)
+        private void SetSkin(string name)
         {
             var resourceDictionary = new ResourceDictionary();
             var uri = $"Skins/{name}.xaml";
@@ -46,7 +46,7 @@ namespace ViewModel
             Application.Current.Resources = resourceDictionary;
 
             Player.Stop();
-            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"\\Resources\\{song}.mp3"));
+            Player.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"\\Resources\\{name}.mp3"));
             Player.Play();
             this.Vm.StartView();
 

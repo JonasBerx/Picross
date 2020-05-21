@@ -82,10 +82,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Resources\1.mp3">
+    <Content Include="Resources\Easter.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\2.mp3">
+    <Content Include="Resources\Sans.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\200w.gif">
@@ -94,7 +94,7 @@
     <Content Include="Resources\2r5r.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\3.mp3">
+    <Content Include="Resources\CarmelDansen.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\carameldansen.gif">

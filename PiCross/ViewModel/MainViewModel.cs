@@ -22,16 +22,12 @@ namespace ViewModel
         private readonly MediaPlayer Player;
         public MainViewModel()
         {
-            
-            Debug.WriteLine("Constructor Main viewmodel");
             this.ActiveWindow = new StartScreenViewModel(this);
             this.PiCrossFacade = new PiCrossFacade();
             this.Player = new MediaPlayer();
             this.Theme = new Theme(this, Player);
             this.Music = new Music(Player);
             CaramelDansen();
-            
-
         }
 
         public PiCrossFacade PiCrossFacade { get; }
@@ -45,7 +41,6 @@ namespace ViewModel
         {
             get
             {
-                Debug.WriteLine(activeWindow);
                 return activeWindow;
             }
             private set
