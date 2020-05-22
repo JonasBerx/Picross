@@ -12,7 +12,4 @@
     </Style>
     <BitmapImage x:Key="ThemaGif" UriSource="https://i.gifer.com/BGhe.gif">
     </BitmapImage>
-    
-    
-
 </ResourceDictionary>

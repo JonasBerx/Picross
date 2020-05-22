@@ -29,7 +29,7 @@
             <Setter Property="FontSize" Value="24"/>
         </Style>
     </UserControl.Resources>
-    <Grid >
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="2*" />
@@ -53,6 +53,11 @@
                         <Button.Content>
                             <Rectangle Width="32" Height="32" Stroke="Black" Fill="{Binding Contents.Value, Converter={StaticResource squareConverter}}"/>
                         </Button.Content>
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="pack://application:,,,/Resources/ping.wav"/>
+                            </EventTrigger>
+                        </Button.Triggers>
                         <Button.InputBindings>
                             <MouseBinding Gesture="LeftClick" Command="{Binding FillCommand}" CommandParameter="{Binding PuzzleSquare}" />
                             <MouseBinding Gesture="RightClick" Command="{Binding EmptyCommand}" CommandParameter="{Binding PuzzleSquare}" />
@@ -118,7 +123,11 @@
                 <Button Content="Main menu" Command="{Binding MenuCommand}" Style="{StaticResource ButtonStyle}"/>
                 <Button Content="Different Puzzle" Command="{Binding PuzzleMenuCommand}" Style="{StaticResource ButtonStyle}"/>
                 <Button Content="Theme menu" Command="{Binding OptionCommand}" Style="{StaticResource ButtonStyle}"/>
-                
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Hyperlink NavigateUri="https://www.youtube.com/watch?v=dQw4w9WgXcQ" RequestNavigate="Ricky">
+                        Solution
+                    </Hyperlink>
+                </Button>
                 <GroupBox Header="Controls" Margin="10" Padding="10">
                     <StackPanel>
                         <WrapPanel>
@@ -136,7 +145,7 @@
                     </StackPanel>
                 </GroupBox>
                 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Command="{Binding Rewind}">
                         <Image Source="https://www.pngfind.com/pngs/m/654-6548807_back-svg-icon-rewind-icon-png-transparent-png.png" Width="32" Height="32"/>
                     </Button>
@@ -147,7 +156,7 @@
                         <Image Source="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png" Width="32" Height="32"/>
                     </Button>
 
-                </StackPanel>
+                </StackPanel>-->
                 <GroupBox Header="Time" Margin="10" Padding="10">
                     <StackPanel>
                         <TextBlock Text="{Binding Chronometer.TotalTime.Value}"/>
@@ -161,7 +170,6 @@
                             </Binding.Converter>
                         </Binding>
                     </Button.Visibility>
-
                 </Button>
                 <Image gif:ImageBehavior.AnimatedSource="{DynamicResource ThemaGif}"/>
             </StackPanel>

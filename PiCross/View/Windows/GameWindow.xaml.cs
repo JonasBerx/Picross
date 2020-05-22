@@ -24,5 +24,11 @@ namespace View.Windows
         {
             InitializeComponent();
         }
+
+        private void Ricky(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
+        }
     }
 }

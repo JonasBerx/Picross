@@ -19,23 +19,23 @@ namespace ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private readonly MediaPlayer Player;
+        //private readonly MediaPlayer Player;
         public MainViewModel()
         {
             this.ActiveWindow = new StartScreenViewModel(this);
             this.PiCrossFacade = new PiCrossFacade();
-            this.Player = new MediaPlayer();
-            this.Theme = new Theme(this, Player);
-            this.Music = new Music(Player);
-            CaramelDansen();
+            //this.Player = new MediaPlayer();
+            //this.Theme = new Theme(this, Player);
+            //this.Music = new Music(Player);
+            //CaramelDansen();
         }
 
         public PiCrossFacade PiCrossFacade { get; }
         private object activeWindow;
         public Action ClosingAction { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
-        public Theme Theme { get; }
-        public Music Music { get; }
+        //public Theme Theme { get; }
+        //public Music Music { get; }
 
         public object ActiveWindow
         {
@@ -50,19 +50,19 @@ namespace ViewModel
             }
         }
         
-        public void Rewind()
-        {
-            Debug.WriteLine("Rewinding");
-            Music.Rewind();
-        }
-        public void Play()
-        {
-            Music.Play();
-        }
-        public void Stop()
-        {
-           Music.Stop();
-        }
+        //public void Rewind()
+        //{
+        //    Debug.WriteLine("Rewinding");
+        //    Music.Rewind();
+        //}
+        //public void Play()
+        //{
+        //    Music.Play();
+        //}
+        //public void Stop()
+        //{
+        //   Music.Stop();
+        //}
         public void StartGame(Puzzle puzzle)
         {
             this.ActiveWindow = new GameViewModel(this, puzzle);
@@ -74,8 +74,6 @@ namespace ViewModel
         }
         public void Options()
         {
-            Debug.WriteLine("Getting in options");
-
             this.ActiveWindow = new OptionsViewModel(this);
         }
 
@@ -89,17 +87,17 @@ namespace ViewModel
             this.ClosingAction?.Invoke();
         }
 
-        public void Sans() 
-        {
-            this.Theme.Sans();
-        }
-        public void Easter()
-        {
-            this.Theme.Easter();
-        }
-        public void CaramelDansen()
-        {
-            this.Theme.CaramelDansen();
-        }
+        //public void Sans() 
+        //{
+        //    this.Theme.Sans();
+        //}
+        //public void Easter()
+        //{
+        //    this.Theme.Easter();
+        //}
+        //public void CaramelDansen()
+        //{
+        //    this.Theme.CaramelDansen();
+        //}
     }
 }

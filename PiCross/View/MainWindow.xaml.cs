@@ -22,13 +22,23 @@ namespace View
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, ISkinManager
     {
-       
         public MainWindow()
         {
-            InitializeComponent(); 
+            Switch("Jojo");
+            InitializeComponent();
+            
         }
-        
+
+        public void Switch(string name)
+        {
+            var resourceDictionary = new ResourceDictionary();
+            var uri = $"Skins/{name}.xaml";
+            resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri(uri, UriKind.Relative)));
+            resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri($"Skins/shared.xaml", UriKind.Relative)));
+            Application.Current.Resources = resourceDictionary;
+
+        }
     }
 }

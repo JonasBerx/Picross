@@ -55,6 +55,11 @@
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding LevelSelectCommand}" CommandParameter="5"/>
                 </Button.InputBindings>
+                <!--<Button.Triggers>
+                    <EventTrigger RoutedEvent="PreviewMouseDown">
+                        <SoundPlayerAction Source="pack://application:,,,/start.wav"/>
+                    </EventTrigger>
+                </Button.Triggers>-->
             </Button>
             <Button Content="Normal (7x7)" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                 <Button.InputBindings>

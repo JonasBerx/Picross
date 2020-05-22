@@ -25,9 +25,9 @@ namespace ViewModel
             this.MenuCommand = new Command(() => this.Vm.StartView());
             this.PuzzleMenuCommand = new Command(() => this.Vm.LevelSelect());
             this.OptionCommand = new Command(() => this.Vm.Options());
-            this.Play = new Command(() => this.Vm.Play());
-            this.Stop = new Command(() => this.Vm.Stop());
-            this.Rewind = new Command(() => this.Vm.Rewind());
+            //this.Play = new Command(() => this.Vm.Play());
+            //this.Stop = new Command(() => this.Vm.Stop());
+            //this.Rewind = new Command(() => this.Vm.Rewind());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

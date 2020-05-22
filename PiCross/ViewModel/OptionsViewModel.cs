@@ -16,18 +16,11 @@ namespace ViewModel
         {
             this.vm = main;
             this.MenuCommand = new Command(() => this.vm.StartView());
-            this.SansCommand = new Command(() => this.vm.Sans());
-            this.EasterCommand = new Command(() => this.vm.Easter());
-            this.CaramelDansenCommand = new Command(() => this.vm.CaramelDansen());
 
-            
         }
 
         private MainViewModel vm { get; }
 
         public ICommand MenuCommand { get; }
-        public ICommand SansCommand { get; }
-        public ICommand EasterCommand { get; }
-        public ICommand CaramelDansenCommand { get; }
     }
 }

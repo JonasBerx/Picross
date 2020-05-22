@@ -26,20 +26,26 @@
         <StackPanel>
             <GroupBox Header="Theme" Margin="10" Padding="10">
                 <StackPanel>
-                    <Button Content="Sans" Style="{DynamicResource ButttonStyle}" Effect="{StaticResource Shadow }">
-                        <Button.InputBindings>
-                            <MouseBinding Gesture="LeftClick" Command="{Binding SansCommand}"/>
-                        </Button.InputBindings>
+                    <Button Content="Sans" Style="{DynamicResource ButttonStyle}" Effect="{StaticResource Shadow }" Click="Sans">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="pack://application:,,,/Resources/tut.wav"/>
+                            </EventTrigger>
+                        </Button.Triggers>
                     </Button>
-                    <Button Content="Easter" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
-                        <Button.InputBindings>
-                            <MouseBinding Gesture="LeftClick" Command="{Binding EasterCommand}"/>
-                        </Button.InputBindings>
+                    <Button Content="Jojo's" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }" Click="Jojo">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="pack://application:,,,/Resources/jojo.wav"/>
+                            </EventTrigger>
+                        </Button.Triggers>
                     </Button>
-                    <Button Content="Carmeldansen" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
-                        <Button.InputBindings>
-                            <MouseBinding Gesture="LeftClick" Command="{Binding CaramelDansenCommand}"/>
-                        </Button.InputBindings>
+                    <Button Content="Carmeldansen" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }" Click="CarmelDansen">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="pack://application:,,,/Resources/wow.wav"/>
+                            </EventTrigger>
+                        </Button.Triggers>
                     </Button>
                     <Button Content="Main menu" Style="{StaticResource ButttonStyle}" Effect="{StaticResource Shadow }">
                         <Button.InputBindings>
