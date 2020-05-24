@@ -2,6 +2,7 @@
 using PiCross;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window, ISkinManager
     {
+        private MediaPlayer music;
         public MainWindow()
         {
             Switch("Jojo");
@@ -39,6 +41,18 @@ namespace View
             resourceDictionary.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri($"Skins/shared.xaml", UriKind.Relative)));
             Application.Current.Resources = resourceDictionary;
 
+            music = new MediaPlayer();
+            music.Stop();
+            Uri musicuri = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Resources\\Theme.mp3", UriKind.Relative);
+            Debug.WriteLine(musicuri);
+            music.Open(musicuri);
+            music.Volume = 0.2f;
+            music.Play();
+        }
+        private void Media_Ended(object sender, EventArgs e)
+        {
+            music.Position = TimeSpan.Zero;
+            music.Play();
         }
     }
 }
